@@ -53,7 +53,7 @@ Ao ser executado fora do container em uma IDE (por exemplo), a pasta /logs é cr
 obs.: Importe o aquivo do insomina, para fazer os testes de API.
 
 ### Diagrama de Implantação
-<img src="https://github.com/haganicolau/spring-rabbitmq/blob/main/doc/diagrams/modules.png" width="550">
+<img src="https://github.com/haganicolau/SpringRabbitmq/blob/main/doc/diagrams/modules.png" width="550">
 
 
 ### Diagrama de Sequencia Rest Modulo
