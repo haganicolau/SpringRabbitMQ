@@ -49,7 +49,7 @@ criado uma pasta /logs é para cada projeto.
 - .SpringRabbitMQ/engineModule/logs: Logs do módulo engineModule
 - .SpringRabbitMQ/restModule/logs: Logs do módulo restModule
 
-## Doc
+## Docs
 ### Arquivo Insomna
 - Para acessar: [Clique aqui!](doc/insomnia/Insomnia.json)
 
