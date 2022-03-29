@@ -25,7 +25,7 @@ obs. Clique em cada um dos módulos para descrição e detalhe de cada um.
    - No terminal:
 
 ```bash
-    git clone git@github.com:haganicolau/spring-rabb
+    git clone git@github.com:haganicolau/SpringRabbitMQ.git
 ```
 
 2. Buildando e executando projeto
