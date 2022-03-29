@@ -1,0 +1,66 @@
+version: '3.9'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    ports:
+      - 15672:15672
+      - 5672:5672
+    expose:
+      - "5672"
+      - "15672"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:15672" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      wit_changelle_project:
+        ipv4_address: 180.30.0.2
+
+  rest-module:
+    container_name: restModule
+    build:
+      context: .
+      dockerfile: restModule/Dockerfile
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    stdin_open: true
+    depends_on:
+      - "rabbitmq"
+    volumes:
+      - './logs/restModule:/tmp/logs'
+    networks:
+      - wit_changelle_project
+
+  engine-module:
+    container_name: engineModule
+    build:
+      context: .
+      dockerfile: engineModule/Dockerfile
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    stdin_open: true
+    depends_on:
+      - "rabbitmq"
+      - "rest-module"
+    volumes:
+      - './logs/engineModule:/tmp/logs'
+    networks:
+      - wit_changelle_project
+
+networks:
+  wit_changelle_project:
+    name: wit_changelle_project
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -   subnet: 180.30.0.1/24

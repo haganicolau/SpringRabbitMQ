@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>common</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/access.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/archived/access.%d{YYYY-MM-DD}.log.zip</fileNamePattern>
+        </rollingPolicy>
+
+        <encoder>
+            <layout>
+                <pattern>
+                    "%h" "%t{yyyy-MM-dd HH:mm:ss,SSS}" %responseHeader{requestId} "%r" %s "%i{User-Agent}"
+                </pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <appender-ref ref="console"/>
+    <appender-ref ref="file"/>
+</configuration>
