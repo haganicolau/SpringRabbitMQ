@@ -41,10 +41,13 @@ obs. Clique em cada um dos módulos para descrição e detalhe de cada um.
 
 ## Acesso a Logs
 Ao executar o projeto a partir da imagem docker é criado uma pasta de logs, sendo para cada projeto:
-- ./logs/engineModule: Logs do módulo engineModule
-- ./logs/restModule: Logs do módulo restModule
+- .SpringRabbitMQ/logs/engineModule: Logs do módulo engineModule
+- .SpringRabbitMQ/logs/restModule: Logs do módulo restModule
 
-Ao ser executado fora do container em uma IDE (por exemplo), a pasta /logs é criada dentro de cada projeto.
+Ao ser executado fora do container em uma IDE (por exemplo), os projetos podem ser executados separados, portanto é
+criado uma pasta /logs é para cada projeto.
+- .SpringRabbitMQ/engineModule/logs: Logs do módulo engineModule
+- .SpringRabbitMQ/restModule/logs: Logs do módulo restModule
 
 ## Doc
 ### Arquivo Insomna
