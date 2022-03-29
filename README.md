@@ -57,7 +57,7 @@ obs.: Importe o aquivo do insomina, para fazer os testes de API.
 
 
 ### Diagrama de Sequencia Rest Modulo
-<img src="https://github.com/haganicolau/spring-rabbitmq/blob/main/doc/diagrams/senquence-rest-modulo.png" width="550">
+<img src="https://github.com/haganicolau/SpringRabbitmq/blob/main/doc/diagrams/senquence-rest-modulo.png" width="550">
 
 ### Diagrama de Sequencia Engine Modulo
-<img src="https://github.com/haganicolau/spring-rabbitmq/blob/main/doc/diagrams/sequence-engine-module.png" width="550">
+<img src="https://github.com/haganicolau/SpringRabbitmq/blob/main/doc/diagrams/sequence-engine-module.png" width="550">
