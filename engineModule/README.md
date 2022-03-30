@@ -2,7 +2,8 @@
 
 ## Descrição do Projeto
 
-Motor que retira do Broker RabbitMQ os operandos e efetua os cáculos.
+Motor que retira do Broker RabbitMQ os operandos e efetua os cáculos. Após concluir as operações volta o resultado para
+o broker para ser processado pelo módulo Rest.
 
 ### Sobre o Módulo
 

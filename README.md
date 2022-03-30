@@ -1,22 +1,30 @@
 # Projeto Principal Spring RabbitMQ
 
 ## Descrição do Projeto
-Este projeto foi criado com objetivo de definir uma plataforma escalável e performática, foram criados dois módulos e uma 
-lib interagindo com o RabbitMQ. 
+Este é um projeto que tem como objetivo fornecer uma API para efetuar operações matemáticas. 
 
-### Sobre o projeto
+Requisitos Funcionais:
+- REST API que expõe as operações de soma, subtracção, multiplicação e divisão.
+- Suporte para dois operandos apenas (a e b).
 
-- Linguagem: Java JDK 11
-- Framework: Spring Boot 2.6.4
-- Build usando Docker e Docker-Compose
+Requisitos Não Funcionais:
+- Maven
+- Resiliência, integração entre os módulos fazendo uso do RabbitMQ
+- Escalável, ambiente docker, permitindo escala horizontal
 
-## Módulos
+### Módulos
 
 - Rest Module: [Clique aqui!](restModule/README.md)
 - Engine Module: [Clique aqui!](engineModule/README.md)
 - Lib DTO Data: [Clique aqui!](libDataDtoChangelle/README.md)
 
 obs. Clique em cada um dos módulos para descrição e detalhe de cada um.
+
+### Sobre o projeto
+
+- Linguagem: Java JDK 11
+- Framework: Spring Boot 2.6.4
+- Build usando Docker e Docker-Compose
 
 ## Preparar ambiente de desenvolvimento
 
