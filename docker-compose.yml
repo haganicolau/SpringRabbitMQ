@@ -37,7 +37,7 @@ services:
     volumes:
       - './logs/restModule:/tmp/logs'
     networks:
-      - wit_changelle_project
+      - changelle_project
 
   engine-module:
     container_name: engineModule
@@ -54,11 +54,11 @@ services:
     volumes:
       - './logs/engineModule:/tmp/logs'
     networks:
-      - wit_changelle_project
+      - changelle_project
 
 networks:
-  wit_changelle_project:
-    name: wit_changelle_project
+  changelle_project:
+    name: changelle_project
     driver: bridge
     ipam:
       driver: default
