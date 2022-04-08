@@ -38,7 +38,7 @@ public class CalculatorController extends AbstractController {
             @RequestParam(name = "b") String b
     ) {
         validateOperators.setValues(a, b);
-        if(! validateOperators.validateValues()) {
+        if (!validateOperators.validateValues()) {
             return getBadRequestMessage("Valores inválidos");
         }
 
@@ -66,7 +66,7 @@ public class CalculatorController extends AbstractController {
             @RequestParam(name = "b") String b
     ) {
         validateOperators.setValues(a, b);
-        if(! validateOperators.validateValues()) {
+        if (!validateOperators.validateValues()) {
             return getBadRequestMessage("Valores inválidos");
         }
 
@@ -94,7 +94,7 @@ public class CalculatorController extends AbstractController {
             @RequestParam(name = "b") String b
     ) {
         validateOperators.setValues(a, b);
-        if(! validateOperators.validateValues()) {
+        if (!validateOperators.validateValues()) {
             return getBadRequestMessage("Valores inválidos");
         }
 
@@ -113,16 +113,16 @@ public class CalculatorController extends AbstractController {
     }
 
     @RequestMapping(
-        value = "/div",
-        method = RequestMethod.GET,
-        produces = "application/json"
+            value = "/div",
+            method = RequestMethod.GET,
+            produces = "application/json"
     )
     public ResponseEntity<String> getDiv(
             @RequestParam(name = "a") String a,
             @RequestParam(name = "b") String b
     ) {
         validateOperators.setValues(a, b);
-        if(! validateOperators.validateValues()) {
+        if (!validateOperators.validateValues()) {
             return getBadRequestMessage("Valores inválidos");
         }
 

@@ -20,8 +20,23 @@ services:
       timeout: 10s
       retries: 5
     networks:
-      wit_changelle_project:
+      changelle_project:
         ipv4_address: 180.30.0.2
+
+  mongo:
+    image: 'mongo'
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: 'votos'
+      MONGO_INITDB_ROOT_USERNAME: 'user'
+      MONGO_INITDB_ROOT_PASSWORD: 'pass'
+    volumes:
+      - './data/mongodb:/data/db'
+    networks:
+      changelle_project:
+        ipv4_address: 180.30.0.3
+
 
   rest-module:
     container_name: restModule
@@ -63,4 +78,4 @@ networks:
     ipam:
       driver: default
       config:
-        -   subnet: 180.30.0.1/24
+        - subnet: 180.30.0.1/24

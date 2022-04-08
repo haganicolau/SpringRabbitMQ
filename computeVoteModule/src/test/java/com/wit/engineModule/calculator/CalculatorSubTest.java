@@ -1,7 +1,9 @@
 package com.wit.engineModule.calculator;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 
@@ -9,23 +11,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
-public class CalculatorSumTest {
+public class CalculatorSubTest {
 
     @Test
     public void operationTestSuccess() {
         BigDecimal num1 = new BigDecimal(10);
         BigDecimal num2 = new BigDecimal(2);
-        CalculatorSum cal = new CalculatorSum();
+        CalculatorSub cal = new CalculatorSub();
         BigDecimal response = cal.operation(num1, num2);
 
-        assertEquals(new BigDecimal(12), response);
+        assertEquals(new BigDecimal(8), response);
     }
 
     @Test
     public void operationTestFail() {
         BigDecimal num1 = new BigDecimal(10);
         BigDecimal num2 = new BigDecimal(2);
-        CalculatorSum cal = new CalculatorSum();
+        CalculatorSub cal = new CalculatorSub();
         BigDecimal response = cal.operation(num1, num2);
 
         assertNotEquals(new BigDecimal(4), response);
