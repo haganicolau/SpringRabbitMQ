@@ -12,7 +12,7 @@
     <artifactId>engineModule</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>engineModulo</name>
-    <description>Recruitment Challenge</description>
+    <description>Challenge to use microservices with spring</description>
     <properties>
         <java.version>11</java.version>
     </properties>
