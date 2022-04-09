@@ -73,7 +73,7 @@ services:
     networks:
       - changelle_project
 
-  computeVote-module:
+  compute-vote-module:
     container_name: computeVoteModule
     build:
       context: .

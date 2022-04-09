@@ -15,13 +15,9 @@ public class VoteConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(VoteConsumer.class);
 
     @Autowired
-    private final RabbitMQService rabbitMQService;
-
-    @Autowired
     private final CandidateService candidateService;
 
-    public VoteConsumer(RabbitMQService rabbitMQService, CandidateService candidateService) {
-        this.rabbitMQService = rabbitMQService;
+    public VoteConsumer(CandidateService candidateService) {
         this.candidateService = candidateService;
     }
 

@@ -83,3 +83,8 @@ obs.: Importe o aquivo do insomina, para fazer os testes de API.
 ### Diagrama de Sequencia Engine Modulo
 
 <img src="https://github.com/haganicolau/SpringRabbitmq/blob/main/doc/diagrams/sequence-engine-module.png" width="550">
+
+
+### Diagrama de Sequencia Compute Vote Modulo
+
+<img src="https://github.com/haganicolau/SpringRabbitmq/blob/main/doc/diagrams/sequence-compute-vote.png" width="550">
