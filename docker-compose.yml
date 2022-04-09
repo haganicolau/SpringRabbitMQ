@@ -31,6 +31,8 @@ services:
       MONGO_INITDB_DATABASE: 'votos'
       MONGO_INITDB_ROOT_USERNAME: 'user'
       MONGO_INITDB_ROOT_PASSWORD: 'pass'
+    ports:
+      - "27017:27017"
     volumes:
       - './data/mongodb:/data/db'
     networks:
@@ -61,6 +63,23 @@ services:
       dockerfile: engineModule/Dockerfile
     ports:
       - "8080:8080"
+    restart: on-failure
+    stdin_open: true
+    depends_on:
+      - "rabbitmq"
+      - "rest-module"
+    volumes:
+      - './logs/engineModule:/tmp/logs'
+    networks:
+      - changelle_project
+
+  computeVote-module:
+    container_name: computeVoteModule
+    build:
+      context: .
+      dockerfile: computeVoteModule/Dockerfile
+    ports:
+      - "8082:8082"
     restart: on-failure
     stdin_open: true
     depends_on:

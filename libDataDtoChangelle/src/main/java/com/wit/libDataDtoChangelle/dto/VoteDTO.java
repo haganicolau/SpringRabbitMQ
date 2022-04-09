@@ -4,10 +4,16 @@ import java.math.BigDecimal;
 
 public class VoteDTO extends AbstractDataDTO {
 
-    private BigDecimal idCandidate;
+    private String idCandidate;
 
-    public VoteDTO(BigDecimal id) {
-        this.idCandidate = id;
+    public VoteDTO() {}
+
+    public String getIdCandidate() {
+        return idCandidate;
+    }
+
+    public void setIdCandidate(String idCandidate) {
+        this.idCandidate = idCandidate;
     }
 
     @Override
