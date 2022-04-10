@@ -20,7 +20,7 @@ services:
       timeout: 10s
       retries: 5
     networks:
-      wit_changelle_project:
+      changelle_project:
         ipv4_address: 180.30.0.2
 
   rest-module:
