@@ -67,7 +67,6 @@ services:
     stdin_open: true
     depends_on:
       - "rabbitmq"
-      - "rest-module"
     volumes:
       - './logs/engineModule:/tmp/logs'
     networks:
@@ -84,7 +83,6 @@ services:
     stdin_open: true
     depends_on:
       - "rabbitmq"
-      - "rest-module"
     volumes:
       - './logs/engineModule:/tmp/logs'
     networks:

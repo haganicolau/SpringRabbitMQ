@@ -39,12 +39,12 @@ WORKDIR /build
 COPY . /build
 
 RUN mvn clean package -f libDataDtoChangelle/pom.xml
-RUN mvn clean install
-RUN mvn clean package
+RUN mvn install
+RUN mvn package
 
 EXPOSE 8082
 VOLUME /tmp
 RUN chmod +x ./computeVoteModule/target/computeVoteModule-0.0.1-SNAPSHOT.jar
-RUN cp ./engineModule/target/engineModule-0.0.1-SNAPSHOT.jar /app.jar
+RUN cp ./computeVoteModule/target/computeVoteModule-0.0.1-SNAPSHOT.jar /app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]

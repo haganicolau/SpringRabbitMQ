@@ -39,8 +39,8 @@ WORKDIR /build
 COPY . /build
 
 RUN mvn clean package -f libDataDtoChangelle/pom.xml
-RUN mvn clean install
-RUN mvn clean package
+RUN mvn install
+RUN mvn package
 
 EXPOSE 8081
 VOLUME /tmp
