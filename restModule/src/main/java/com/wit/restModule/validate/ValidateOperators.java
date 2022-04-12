@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.regex.Pattern;
 
 @Service
-public class ValidateOperators implements Validate{
+public class ValidateOperators implements Validate {
 
     private String numberA;
     private String numberB;

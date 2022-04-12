@@ -12,14 +12,17 @@ o broker para ser processado pelo módulo Rest.
 - Logback: Logs
 
 ## Sobre Testes unitários
-Foram criados alguns testes unitários apenas a título de apresentação das operações matemáticas. 
+
+Foram criados alguns testes unitários apenas a título de apresentação das operações matemáticas.
 
 No terminal:
+
 ```bash
     mvn test
 ```
 
 ### Logs
+
 - file: rabbit.log
 
 ```

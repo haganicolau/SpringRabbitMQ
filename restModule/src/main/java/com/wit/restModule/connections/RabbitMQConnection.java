@@ -27,13 +27,19 @@ public class RabbitMQConnection {
         DirectExchange directExchange = this.exchange();
         this.amqpAdmin.declareExchange(directExchange);
 
-        Queue queue1 = this.getQueue(RabbitMQConsts.QUEUE_CALCULATE);
-        Binding connect1 = this.connectQueueExchange(queue1, directExchange);
-        this.declareQueue(queue1, connect1);
+        for (String nameQueue : RabbitMQConsts.getAll()) {
+            Queue queue = this.getQueue(nameQueue);
+            Binding connect1 = this.connectQueueExchange(queue, directExchange);
+            this.declareQueue(queue, connect1);
+        }
 
-        Queue queue2 = this.getQueue(RabbitMQConsts.QUEUE_RESPONSE);
-        Binding connect2 = this.connectQueueExchange(queue2, directExchange);
-        this.declareQueue(queue2, connect2);
+//        Queue queue1 = this.getQueue(RabbitMQConsts.QUEUE_CALCULATE);
+//        Binding connect1 = this.connectQueueExchange(queue1, directExchange);
+//        this.declareQueue(queue1, connect1);
+//
+//        Queue queue2 = this.getQueue(RabbitMQConsts.QUEUE_RESPONSE);
+//        Binding connect2 = this.connectQueueExchange(queue2, directExchange);
+//        this.declareQueue(queue2, connect2);
     }
 
     private void declareQueue(Queue queue, Binding binding) {

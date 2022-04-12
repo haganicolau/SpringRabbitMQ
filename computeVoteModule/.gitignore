@@ -31,13 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-.DS_Store
-.mvn/
-/logs
-*.log
-*.jar
-*.zip
-data/*
-*.gz

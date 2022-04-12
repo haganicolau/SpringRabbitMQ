@@ -17,6 +17,7 @@
         <module>libDataDtoChangelle</module>
         <module>engineModule</module>
         <module>restModule</module>
+        <module>computeVoteModule</module>
     </modules>
 
     <dependencies>

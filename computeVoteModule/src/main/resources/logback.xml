@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <pattern>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta([%thread]) %logger{36}.%M: %msg%n
+                </pattern>
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/spring-boot.log</file>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/archived/spring-boot.%d{YYYY-MM-DD}.log.zip</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="FILE_RABBITMQ" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/rabbit.log</file>
+
+        <filter class="com.wit.computeVoteModule.filters.SampleFilter"/>
+        <encoder>
+            <pattern>
+                "%date{yyyy-MM-dd HH:mm:ss,SSS}" "%message" \n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE_RABBITMQ"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+
+</configuration>

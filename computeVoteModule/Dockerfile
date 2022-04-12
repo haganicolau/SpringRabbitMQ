@@ -42,9 +42,9 @@ RUN mvn clean package -f libDataDtoChangelle/pom.xml
 RUN mvn install
 RUN mvn package
 
-EXPOSE 8080
+EXPOSE 8082
 VOLUME /tmp
-RUN chmod +x ./engineModule/target/engineModule-0.0.1-SNAPSHOT.jar
-RUN cp ./engineModule/target/engineModule-0.0.1-SNAPSHOT.jar /app.jar
+RUN chmod +x ./computeVoteModule/target/computeVoteModule-0.0.1-SNAPSHOT.jar
+RUN cp ./computeVoteModule/target/computeVoteModule-0.0.1-SNAPSHOT.jar /app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]
