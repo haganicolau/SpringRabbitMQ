@@ -42,9 +42,10 @@ services:
 
   rest-module:
     container_name: restModule
+    image: spring-boot
     build:
-      context: .
-      dockerfile: restModule/Dockerfile
+      context: ./restModule
+      dockerfile: docker/Dockerfile
     restart: on-failure
     ports:
       - "8081:8081"
@@ -52,15 +53,18 @@ services:
     depends_on:
       - "rabbitmq"
     volumes:
+      - '.:/usr/src/mymaven'
+      - '/Users/hagamenonnicolaudeoliveira/.m2:/root/.m2'
       - './logs/restModule:/tmp/logs'
     networks:
       - changelle_project
 
   engine-module:
     container_name: engineModule
+    image: spring-boot
     build:
       context: .
-      dockerfile: engineModule/Dockerfile
+      dockerfile: engineModule/docker/Dockerfile
     ports:
       - "8080:8080"
     restart: on-failure
@@ -68,25 +72,27 @@ services:
     depends_on:
       - "rabbitmq"
     volumes:
+      - '.:/usr/src/mymaven'
+      - '/Users/hagamenonnicolaudeoliveira/.m2:/root/.m2'
       - './logs/engineModule:/tmp/logs'
     networks:
       - changelle_project
 
-  compute-vote-module:
-    container_name: computeVoteModule
-    build:
-      context: .
-      dockerfile: computeVoteModule/Dockerfile
-    ports:
-      - "8082:8082"
-    restart: on-failure
-    stdin_open: true
-    depends_on:
-      - "rabbitmq"
-    volumes:
-      - './logs/engineModule:/tmp/logs'
-    networks:
-      - changelle_project
+#  compute-vote-module:
+#    container_name: computeVoteModule
+#    build:
+#      context: .
+#      dockerfile: computeVoteModule/Dockerfile
+#    ports:
+#      - "8082:8082"
+#    restart: on-failure
+#    stdin_open: true
+#    depends_on:
+#      - "rabbitmq"
+#    volumes:
+#      - './logs/engineModule:/tmp/logs'
+#    networks:
+#      - changelle_project
 
 networks:
   changelle_project:

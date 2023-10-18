@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 
+@Repository
 public interface CandidateRepository extends MongoRepository<Candidate, String> {
 
     @Query(value="{code:'?0'}")
@@ -13,4 +14,5 @@ public interface CandidateRepository extends MongoRepository<Candidate, String> 
 
     @Query(value="{code:'?0'}", fields="{'name' : 1}")
     List<Candidate> findAll(String category);
+
 }
